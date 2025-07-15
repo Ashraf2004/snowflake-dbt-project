@@ -2,6 +2,8 @@
 
 {{ config(materialized='table') }}
 
+-- we can schedule queries using 'SCHEDULE' Command.
+
 SELECT
     first_name,
     last_name,
