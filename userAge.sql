@@ -1,4 +1,4 @@
-CREATE OR REPLACE TABLE my_database.my_schema.userAge AS
+CREATE OR REPLACE TABLE SNOWFLAKE_LEARNING_DB.DUMMY_TABLE.USERAGE AS
 SELECT
     first_name,
     last_name,
