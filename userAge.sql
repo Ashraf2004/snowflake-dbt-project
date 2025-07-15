@@ -1,7 +1,4 @@
--- models/userAge.sql
-
-{{ config(materialized='table') }}
-
+CREATE OR REPLACE TABLE my_database.my_schema.userAge AS
 SELECT
     first_name,
     last_name,
@@ -10,5 +7,4 @@ SELECT
     zipcode,
     DATEDIFF(year, dob, current_date()) AS age,
     refreshed_at
-FROM SNOWFLAKE_LEARNING_DB.DUMMY_TABLE.DUMMY_USER_DATA
-
+FROM SNOWFLAKE_LEARNING_DB.DUMMY_TABLE.DUMMY_USER_DATA;
