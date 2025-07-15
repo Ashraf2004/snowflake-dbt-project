@@ -1,0 +1,11 @@
+myproject:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      role: ACCOUNTADMIN
+      warehouse: COMPUTE_WH
+      database: SNOWFLAKE_LEARNING_DB
+      schema: DUMMY_TABLE
+      account: ''
+      user: ''
