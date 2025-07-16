@@ -2003,3 +2003,227 @@ syntax error line 20 at position 38 unexpected ')'.
 [0m23:57:07.466282 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 2.894135, "process_in_blocks": "0", "process_kernel_time": 1.19, "process_mem_max_rss": "421168", "process_out_blocks": "0", "process_user_time": 5.12}
 [0m23:57:07.466959 [debug] [Dummy-1   ]: Command `cli run` failed at 23:57:07.466693 after 2.90 seconds
 [0m23:57:07.467520 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 00:09:14.520858 | 2d0b8347-d9f8-45fb-a795-8bc5ced779bc ==============================
+[0m00:09:14.520858 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m00:09:14.521915 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/tmp/dbt/logs', 'debug': 'False', 'profiles_dir': '/tmp/dbt/', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt ', 'static_parser': 'True', 'target_path': '/tmp/dbt/target/', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m00:09:14.591580 [error] [Dummy-1   ]:  adapter: Invalid profile: 'user' is a required property.
+[0m00:09:14.881670 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m00:09:15.653289 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m00:09:15.854704 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m00:09:15.855378 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m00:09:16.083724 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m00:09:16.086282 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m00:09:16.139342 [info ] [Dummy-1   ]: Found 1 model, 474 macros
+[0m00:09:16.141662 [info ] [Dummy-1   ]: 
+[0m00:09:16.142293 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m00:09:16.142904 [info ] [Dummy-1   ]: 
+[0m00:09:16.143839 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m00:09:16.145819 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SNOWFLAKE_LEARNING_DB'
+[0m00:09:16.282682 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_LEARNING_DB"
+[0m00:09:16.283414 [debug] [ThreadPool]: On list_SNOWFLAKE_LEARNING_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "myproject", "target_name": "dev", "connection_name": "list_SNOWFLAKE_LEARNING_DB"} */
+show terse schemas in database SNOWFLAKE_LEARNING_DB
+    limit 10000
+[0m00:09:16.283975 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:09:16.596984 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.313 seconds
+[0m00:09:16.601125 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE'
+[0m00:09:16.618630 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE"
+[0m00:09:16.619302 [debug] [ThreadPool]: On list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "myproject", "target_name": "dev", "connection_name": "list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m00:09:16.619834 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:09:16.943480 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.323 seconds
+[0m00:09:16.949564 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE"
+[0m00:09:16.950193 [debug] [ThreadPool]: On list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "myproject", "target_name": "dev", "connection_name": "list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE"} */
+show objects in SNOWFLAKE_LEARNING_DB.DUMMY_TABLE
+    limit 10000
+    
+;
+[0m00:09:17.018354 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.067 seconds
+[0m00:09:17.021099 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE"
+[0m00:09:17.021771 [debug] [ThreadPool]: On list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "myproject", "target_name": "dev", "connection_name": "list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m00:09:17.068559 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.046 seconds
+[0m00:09:17.077398 [debug] [Thread-2 (]: Began running node model.myproject.userAge
+[0m00:09:17.078355 [info ] [Thread-2 (]: 1 of 1 START sql table model DUMMY_TABLE.userAge ............................... [RUN]
+[0m00:09:17.079182 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE, now model.myproject.userAge)
+[0m00:09:17.079808 [debug] [Thread-2 (]: Began compiling node model.myproject.userAge
+[0m00:09:17.091582 [debug] [Thread-2 (]: Writing injected SQL for node "model.myproject.userAge"
+[0m00:09:17.092562 [debug] [Thread-2 (]: Began executing node model.myproject.userAge
+[0m00:09:17.138369 [debug] [Thread-2 (]: Writing runtime sql for node "model.myproject.userAge"
+[0m00:09:17.140008 [debug] [Thread-2 (]: Using snowflake connection "model.myproject.userAge"
+[0m00:09:17.140667 [debug] [Thread-2 (]: On model.myproject.userAge: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "myproject", "target_name": "dev", "node_id": "model.myproject.userAge"} */
+create or replace transient table SNOWFLAKE_LEARNING_DB.DUMMY_TABLE.userAge
+         as
+        (-- models/userAge.sql
+
+
+
+-- we can schedule queries using 'SCHEDULE' Command.
+<<<<<<< local
+-- comment 1.4 from snow
+=======
+-- comment 1.4 from git
+>>>>>>> remote
+
+SELECT
+    first_name,
+    last_name,
+    dob,
+    address,
+    zipcode,
+    DATEDIFF(year, dob, current_date()) AS age,
+    refreshed_at
+FROM SNOWFLAKE_LEARNING_DB.DUMMY_TABLE.DUMMY_USER_DATA
+        );
+[0m00:09:17.141233 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m00:09:17.993898 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01bdb8cd-0001-29d8-0009-fed2000121de
+[0m00:09:17.994621 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 001003 (42000): SQL compilation error:
+syntax error line 8 at position 0 unexpected '<<'.
+syntax error line 20 at position 38 unexpected ')'.
+[0m00:09:18.000008 [debug] [Thread-2 (]: Database Error in model userAge (models/userAge.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 8 at position 0 unexpected '<<'.
+  syntax error line 20 at position 38 unexpected ')'.
+  compiled code at /tmp/dbt/target/run/myproject/models/userAge.sql
+[0m00:09:18.003414 [error] [Thread-2 (]: 1 of 1 ERROR creating sql table model DUMMY_TABLE.userAge ...................... [[31mERROR[0m in 0.92s]
+[0m00:09:18.004343 [debug] [Thread-2 (]: Finished running node model.myproject.userAge
+[0m00:09:18.005267 [debug] [Thread-5 (]: Marking all children of 'model.myproject.userAge' to be skipped because of status 'error'.  Reason: Database Error in model userAge (models/userAge.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 8 at position 0 unexpected '<<'.
+  syntax error line 20 at position 38 unexpected ')'.
+  compiled code at /tmp/dbt/target/run/myproject/models/userAge.sql.
+[0m00:09:18.008903 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m00:09:18.009488 [debug] [Dummy-1   ]: Connection 'list_SNOWFLAKE_LEARNING_DB' was properly closed.
+[0m00:09:18.009977 [debug] [Dummy-1   ]: Connection 'model.myproject.userAge' was properly closed.
+[0m00:09:18.010510 [info ] [Dummy-1   ]: 
+[0m00:09:18.011076 [info ] [Dummy-1   ]: Finished running 1 table model in 0 hours 0 minutes and 1.87 seconds (1.87s).
+[0m00:09:18.012103 [debug] [Dummy-1   ]: Command end result
+[0m00:09:18.040617 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m00:09:18.043377 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m00:09:18.051555 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m00:09:18.052171 [info ] [Dummy-1   ]: 
+[0m00:09:18.052956 [info ] [Dummy-1   ]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m00:09:18.053501 [info ] [Dummy-1   ]: 
+[0m00:09:18.054165 [error] [Dummy-1   ]:   Database Error in model userAge (models/userAge.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 8 at position 0 unexpected '<<'.
+  syntax error line 20 at position 38 unexpected ')'.
+  compiled code at /tmp/dbt/target/run/myproject/models/userAge.sql
+[0m00:09:18.054651 [info ] [Dummy-1   ]: 
+[0m00:09:18.055170 [info ] [Dummy-1   ]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m00:09:18.057053 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.6300945, "process_in_blocks": "0", "process_kernel_time": 1.2, "process_mem_max_rss": "426180", "process_out_blocks": "0", "process_user_time": 5.17}
+[0m00:09:18.057811 [debug] [Dummy-1   ]: Command `cli run` failed at 00:09:18.057535 after 3.63 seconds
+[0m00:09:18.058486 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 00:11:10.542219 | 654a14c1-397f-4e8c-a426-3cc2470f8b49 ==============================
+[0m00:11:10.542219 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m00:11:10.543363 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/tmp/dbt/logs', 'profiles_dir': '/tmp/dbt/', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt ', 'target_path': '/tmp/dbt/target/', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m00:11:10.613138 [error] [Dummy-1   ]:  adapter: Invalid profile: 'user' is a required property.
+[0m00:11:10.900188 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m00:11:11.603471 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m00:11:11.823896 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m00:11:11.824566 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m00:11:12.053529 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m00:11:12.055992 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m00:11:12.110479 [info ] [Dummy-1   ]: Found 1 model, 474 macros
+[0m00:11:12.113072 [info ] [Dummy-1   ]: 
+[0m00:11:12.113735 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m00:11:12.114292 [info ] [Dummy-1   ]: 
+[0m00:11:12.115197 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m00:11:12.117342 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SNOWFLAKE_LEARNING_DB'
+[0m00:11:12.249803 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_LEARNING_DB"
+[0m00:11:12.250521 [debug] [ThreadPool]: On list_SNOWFLAKE_LEARNING_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "myproject", "target_name": "dev", "connection_name": "list_SNOWFLAKE_LEARNING_DB"} */
+show terse schemas in database SNOWFLAKE_LEARNING_DB
+    limit 10000
+[0m00:11:12.251080 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:11:12.544495 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.293 seconds
+[0m00:11:12.548751 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE'
+[0m00:11:12.566422 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE"
+[0m00:11:12.567108 [debug] [ThreadPool]: On list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "myproject", "target_name": "dev", "connection_name": "list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m00:11:12.567655 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:11:12.888292 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.320 seconds
+[0m00:11:12.894455 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE"
+[0m00:11:12.895150 [debug] [ThreadPool]: On list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "myproject", "target_name": "dev", "connection_name": "list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE"} */
+show objects in SNOWFLAKE_LEARNING_DB.DUMMY_TABLE
+    limit 10000
+    
+;
+[0m00:11:12.969694 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.074 seconds
+[0m00:11:12.972326 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE"
+[0m00:11:12.973037 [debug] [ThreadPool]: On list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "myproject", "target_name": "dev", "connection_name": "list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m00:11:13.018304 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.045 seconds
+[0m00:11:13.026558 [debug] [Thread-2 (]: Began running node model.myproject.userAge
+[0m00:11:13.027531 [info ] [Thread-2 (]: 1 of 1 START sql table model DUMMY_TABLE.userAge ............................... [RUN]
+[0m00:11:13.028351 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE, now model.myproject.userAge)
+[0m00:11:13.028947 [debug] [Thread-2 (]: Began compiling node model.myproject.userAge
+[0m00:11:13.040641 [debug] [Thread-2 (]: Writing injected SQL for node "model.myproject.userAge"
+[0m00:11:13.041666 [debug] [Thread-2 (]: Began executing node model.myproject.userAge
+[0m00:11:13.088363 [debug] [Thread-2 (]: Writing runtime sql for node "model.myproject.userAge"
+[0m00:11:13.090003 [debug] [Thread-2 (]: Using snowflake connection "model.myproject.userAge"
+[0m00:11:13.090664 [debug] [Thread-2 (]: On model.myproject.userAge: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "myproject", "target_name": "dev", "node_id": "model.myproject.userAge"} */
+create or replace transient table SNOWFLAKE_LEARNING_DB.DUMMY_TABLE.userAge
+         as
+        (-- models/userAge.sql
+
+
+
+-- we can schedule queries using 'SCHEDULE' Command.
+<<<<<<< local
+-- comment 1.4 from snow
+=======
+-- comment 1.4 from git
+>>>>>>> remote
+
+SELECT
+    first_name,
+    last_name,
+    dob,
+    address,
+    zipcode,
+    DATEDIFF(year, dob, current_date()) AS age,
+    refreshed_at
+FROM SNOWFLAKE_LEARNING_DB.DUMMY_TABLE.DUMMY_USER_DATA
+        );
+[0m00:11:13.091262 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m00:11:13.454213 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01bdb8cf-0001-29a7-0009-fed20001553e
+[0m00:11:13.454933 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 001003 (42000): SQL compilation error:
+syntax error line 8 at position 0 unexpected '<<'.
+syntax error line 20 at position 38 unexpected ')'.
+[0m00:11:13.460311 [debug] [Thread-2 (]: Database Error in model userAge (models/userAge.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 8 at position 0 unexpected '<<'.
+  syntax error line 20 at position 38 unexpected ')'.
+  compiled code at /tmp/dbt/target/run/myproject/models/userAge.sql
+[0m00:11:13.463598 [error] [Thread-2 (]: 1 of 1 ERROR creating sql table model DUMMY_TABLE.userAge ...................... [[31mERROR[0m in 0.43s]
+[0m00:11:13.464501 [debug] [Thread-2 (]: Finished running node model.myproject.userAge
+[0m00:11:13.465405 [debug] [Thread-5 (]: Marking all children of 'model.myproject.userAge' to be skipped because of status 'error'.  Reason: Database Error in model userAge (models/userAge.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 8 at position 0 unexpected '<<'.
+  syntax error line 20 at position 38 unexpected ')'.
+  compiled code at /tmp/dbt/target/run/myproject/models/userAge.sql.
+[0m00:11:13.468599 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m00:11:13.469106 [debug] [Dummy-1   ]: Connection 'list_SNOWFLAKE_LEARNING_DB' was properly closed.
+[0m00:11:13.469578 [debug] [Dummy-1   ]: Connection 'model.myproject.userAge' was properly closed.
+[0m00:11:13.470104 [info ] [Dummy-1   ]: 
+[0m00:11:13.470657 [info ] [Dummy-1   ]: Finished running 1 table model in 0 hours 0 minutes and 1.36 seconds (1.36s).
+[0m00:11:13.471617 [debug] [Dummy-1   ]: Command end result
+[0m00:11:13.499628 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m00:11:13.501998 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m00:11:13.509859 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m00:11:13.510428 [info ] [Dummy-1   ]: 
+[0m00:11:13.511115 [info ] [Dummy-1   ]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m00:11:13.511655 [info ] [Dummy-1   ]: 
+[0m00:11:13.512367 [error] [Dummy-1   ]:   Database Error in model userAge (models/userAge.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 8 at position 0 unexpected '<<'.
+  syntax error line 20 at position 38 unexpected ')'.
+  compiled code at /tmp/dbt/target/run/myproject/models/userAge.sql
+[0m00:11:13.512977 [info ] [Dummy-1   ]: 
+[0m00:11:13.513539 [info ] [Dummy-1   ]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m00:11:13.515489 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.0661867, "process_in_blocks": "0", "process_kernel_time": 1.28, "process_mem_max_rss": "423464", "process_out_blocks": "0", "process_user_time": 5.06}
+[0m00:11:13.516213 [debug] [Dummy-1   ]: Command `cli run` failed at 00:11:13.515917 after 3.07 seconds
+[0m00:11:13.516811 [debug] [Dummy-1   ]: Flushing usage events
