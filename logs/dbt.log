@@ -1692,3 +1692,90 @@ create or replace   view SNOWFLAKE_LEARNING_DB.DUMMY_TABLE.my_second_dbt_model
 [0m04:11:14.942158 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.667731, "process_in_blocks": "0", "process_kernel_time": 1.13, "process_mem_max_rss": "418696", "process_out_blocks": "0", "process_user_time": 4.98}
 [0m04:11:14.942879 [debug] [Dummy-1   ]: Command `cli run` succeeded at 04:11:14.942602 after 4.67 seconds
 [0m04:11:14.943506 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 09:54:05.791982 | 27f1cde2-1dbf-4d2e-aa32-2ed5140c3837 ==============================
+[0m09:54:05.791982 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m09:54:05.793012 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'debug': 'False', 'version_check': 'True', 'log_path': '/tmp/dbt/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt ', 'introspect': 'True', 'static_parser': 'True', 'target_path': '/tmp/dbt/target/', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m09:54:05.861697 [error] [Dummy-1   ]:  adapter: Invalid profile: 'user' is a required property.
+[0m09:54:06.146664 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m09:54:06.860070 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m09:54:06.861538 [info ] [Dummy-1   ]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m09:54:08.457558 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m09:54:08.460158 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m09:54:08.511557 [info ] [Dummy-1   ]: Found 1 model, 474 macros
+[0m09:54:08.514048 [info ] [Dummy-1   ]: 
+[0m09:54:08.514655 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m09:54:08.515125 [info ] [Dummy-1   ]: 
+[0m09:54:08.515974 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m09:54:08.518022 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SNOWFLAKE_LEARNING_DB'
+[0m09:54:08.645883 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_LEARNING_DB"
+[0m09:54:08.646557 [debug] [ThreadPool]: On list_SNOWFLAKE_LEARNING_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "myproject", "target_name": "dev", "connection_name": "list_SNOWFLAKE_LEARNING_DB"} */
+show terse schemas in database SNOWFLAKE_LEARNING_DB
+    limit 10000
+[0m09:54:08.647122 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:54:08.895428 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.248 seconds
+[0m09:54:08.899497 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE'
+[0m09:54:08.917634 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE"
+[0m09:54:08.918282 [debug] [ThreadPool]: On list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "myproject", "target_name": "dev", "connection_name": "list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m09:54:08.918762 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:54:09.538457 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.619 seconds
+[0m09:54:09.544524 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE"
+[0m09:54:09.545149 [debug] [ThreadPool]: On list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "myproject", "target_name": "dev", "connection_name": "list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE"} */
+show objects in SNOWFLAKE_LEARNING_DB.DUMMY_TABLE
+    limit 10000
+    
+;
+[0m09:54:09.604665 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.059 seconds
+[0m09:54:09.607309 [debug] [ThreadPool]: Using snowflake connection "list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE"
+[0m09:54:09.607889 [debug] [ThreadPool]: On list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "myproject", "target_name": "dev", "connection_name": "list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m09:54:09.946835 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.338 seconds
+[0m09:54:09.955756 [debug] [Thread-2 (]: Began running node model.myproject.userAge
+[0m09:54:09.956695 [info ] [Thread-2 (]: 1 of 1 START sql table model DUMMY_TABLE.userAge ............................... [RUN]
+[0m09:54:09.957463 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_SNOWFLAKE_LEARNING_DB_DUMMY_TABLE, now model.myproject.userAge)
+[0m09:54:09.958070 [debug] [Thread-2 (]: Began compiling node model.myproject.userAge
+[0m09:54:09.969721 [debug] [Thread-2 (]: Writing injected SQL for node "model.myproject.userAge"
+[0m09:54:09.970955 [debug] [Thread-2 (]: Began executing node model.myproject.userAge
+[0m09:54:10.014958 [debug] [Thread-2 (]: Writing runtime sql for node "model.myproject.userAge"
+[0m09:54:10.016631 [debug] [Thread-2 (]: Using snowflake connection "model.myproject.userAge"
+[0m09:54:10.017293 [debug] [Thread-2 (]: On model.myproject.userAge: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "myproject", "target_name": "dev", "node_id": "model.myproject.userAge"} */
+create or replace transient table SNOWFLAKE_LEARNING_DB.DUMMY_TABLE.userAge
+         as
+        (-- models/userAge.sql
+
+
+
+-- we can schedule queries using 'SCHEDULE' Command.
+
+SELECT
+    first_name,
+    last_name,
+    dob,
+    address,
+    zipcode,
+    DATEDIFF(year, dob, current_date()) AS age,
+    refreshed_at
+FROM SNOWFLAKE_LEARNING_DB.DUMMY_TABLE.DUMMY_USER_DATA
+        );
+[0m09:54:10.017862 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m09:54:11.263356 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.245 seconds
+[0m09:54:11.301205 [info ] [Thread-2 (]: 1 of 1 OK created sql table model DUMMY_TABLE.userAge .......................... [[32mSUCCESS 1[0m in 1.34s]
+[0m09:54:11.302133 [debug] [Thread-2 (]: Finished running node model.myproject.userAge
+[0m09:54:11.304512 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m09:54:11.305012 [debug] [Dummy-1   ]: Connection 'list_SNOWFLAKE_LEARNING_DB' was properly closed.
+[0m09:54:11.305445 [debug] [Dummy-1   ]: Connection 'model.myproject.userAge' was properly closed.
+[0m09:54:11.305925 [info ] [Dummy-1   ]: 
+[0m09:54:11.306427 [info ] [Dummy-1   ]: Finished running 1 table model in 0 hours 0 minutes and 2.79 seconds (2.79s).
+[0m09:54:11.307332 [debug] [Dummy-1   ]: Command end result
+[0m09:54:11.334937 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m09:54:11.336933 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m09:54:11.344203 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m09:54:11.344691 [info ] [Dummy-1   ]: 
+[0m09:54:11.345359 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m09:54:11.345832 [info ] [Dummy-1   ]: 
+[0m09:54:11.346349 [info ] [Dummy-1   ]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m09:54:11.347991 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 5.6489935, "process_in_blocks": "0", "process_kernel_time": 1.17, "process_mem_max_rss": "462796", "process_out_blocks": "0", "process_user_time": 5.93}
+[0m09:54:11.348654 [debug] [Dummy-1   ]: Command `cli run` succeeded at 09:54:11.348389 after 5.65 seconds
+[0m09:54:11.349179 [debug] [Dummy-1   ]: Flushing usage events

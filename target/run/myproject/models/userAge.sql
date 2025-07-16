@@ -1,14 +1,15 @@
--- models/userAge.sql
 
-{{ config(materialized='table') }}
+  
+    
+
+        create or replace transient table SNOWFLAKE_LEARNING_DB.DUMMY_TABLE.userAge
+         as
+        (-- models/userAge.sql
+
+
 
 -- we can schedule queries using 'SCHEDULE' Command.
-<<<<<<< local
--- comment 1 from snowflake.
 
-=======
--- comment 2 from git--
->>>>>>> remote
 SELECT
     first_name,
     last_name,
@@ -18,4 +19,6 @@ SELECT
     DATEDIFF(year, dob, current_date()) AS age,
     refreshed_at
 FROM SNOWFLAKE_LEARNING_DB.DUMMY_TABLE.DUMMY_USER_DATA
-
+        );
+      
+  
