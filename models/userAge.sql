@@ -3,7 +3,7 @@
 {{ config(materialized='table') }}
 
 -- we can schedule queries using 'SCHEDULE' Command.
--- comment 11 from snowflake.
+-- comment 143 from snowflake.
 
 SELECT
     first_name,
