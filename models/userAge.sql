@@ -3,7 +3,11 @@
 {{ config(materialized='table') }}
 
 -- we can schedule queries using 'SCHEDULE' Command.
+<<<<<<< local
+-- comment 1.4 from snow
+=======
 -- comment 1.4 from git
+>>>>>>> remote
 
 SELECT
     first_name,
