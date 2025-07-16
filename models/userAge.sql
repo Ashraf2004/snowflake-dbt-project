@@ -3,12 +3,8 @@
 {{ config(materialized='table') }}
 
 -- we can schedule queries using 'SCHEDULE' Command.
-<<<<<<< local
--- comment 1 from snowflake.
+-- comment 11 from snowflake.
 
-=======
--- comment 2 from git--
->>>>>>> remote
 SELECT
     first_name,
     last_name,
