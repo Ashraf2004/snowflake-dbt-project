@@ -3,7 +3,7 @@
 {{ config(materialized='table') }}
 
 -- we can schedule queries using 'SCHEDULE' Command.
--- comment 1.4 from snow
+-- comment 1.5 from git
 
 SELECT
     first_name,
